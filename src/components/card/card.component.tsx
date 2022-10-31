@@ -1,6 +1,12 @@
+import { Monster } from '../../App';
+
 import './card.styles.css';
 
-const CardComponent = ({ monster: { id, name, email } }) => (
+type CardProps = {
+  monster: Monster
+};
+
+const Card = ({ monster: { id, name, email } }: CardProps) => (
     <div className="card-container" key={id}>
         <img alt={`monster ${name}`} src={`https://robohash.org/${id}?set=set2&size=180x180`}/>
         <h2>{name}</h2>
@@ -8,4 +14,4 @@ const CardComponent = ({ monster: { id, name, email } }) => (
     </div>
 );
 
-export default CardComponent;
+export default Card;
